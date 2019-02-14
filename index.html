@@ -1,0 +1,17 @@
+---
+title: felton.github.io
+layout: default
+---
+
+
+<div class="container">
+<h1 class="mt-5">github</h1>
+
+{% for repo in site.data.repos %}
+  {% cycle '<div class="row">', '', '' %}
+    <div class="col-lg-4">
+      {% include card.html title=repo.name tags=repo.topics lang=repo.language repo=repo %}
+    </div>
+  {% cycle '', '', '</div>' %}
+{% endfor %}
+</div>
